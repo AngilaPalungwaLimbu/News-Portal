@@ -51,7 +51,6 @@ class CategoryController extends Controller
         }
         else{
             $category->status=0;
-
         }
         $category->save();
         return redirect('/category');
