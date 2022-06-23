@@ -5,7 +5,7 @@ use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\AdController;
-use App\Http\Controllers\Backend\Controller;
+use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Auth;
 
 /*

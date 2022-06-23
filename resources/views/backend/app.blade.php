@@ -403,7 +403,8 @@
     <script>
         $(document).ready(function() {
             $('.select2').select2({
-                theme: 'classic'
+                theme: 'classic',
+                placeholder : "कृपया श्रेणी चयन गर्नुहोस्"
             });
             $(".").select2({
                 width: 'resolve' // need to override the changed default

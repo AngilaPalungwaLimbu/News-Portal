@@ -3,14 +3,38 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home(){
-        return view('frontend.pages.home');
+    //Home Page
+    public function home()
+    {
+        //Menus List
+        $menus = Category::where('status',true)->get();
+
+        //Latest Top 3 Post
+        $posts = Post::orderBy('id','desc')->limit(3)->get();
+
+        //Policits
+        $category = Category::where('slug','politics')->first();
+        $politics = $category->posts;
+
+
+        return view('frontend.pages.home',compact('menus','posts','politics'));
     }
-    public function about(){
-        return view('frontend.pages.about');
+
+    //Category Page
+    public function category()
+    {
+        # code...
+    }
+
+    //Single Page
+    public function single()
+    {
+        # code...
     }
 }
