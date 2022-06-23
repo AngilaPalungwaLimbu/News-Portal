@@ -19,6 +19,11 @@
                                 placeholder="Enter Title" value="{{$post->title}}">
                         </div>
                         <div class="form-group">
+                            <label for="sub_title">Sub Title</label>
+                            <input type="text" name="sub_title" id="sub_title" class="form-control"
+                                placeholder="Enter Sub Title" value="{{$post->sub_title}}>
+                        </div>
+                        <div class="form-group">
                             <label for="category_name"> Category </label>
                             <select name="category_id[]" id="category_id" class="form-select form-control select2" multiple>
                                 @foreach ($categories as $category)

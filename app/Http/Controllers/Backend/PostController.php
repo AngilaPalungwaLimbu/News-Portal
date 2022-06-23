@@ -43,6 +43,7 @@ class PostController extends Controller
     {
         $post=new Post();
         $post->title=$request->title;
+        $post->sub_title=$request->sub_title;
         $post->description=$request->description;
         $post->slug=Str::slug($request->title);
         if($request->hasFile('image'))
@@ -95,6 +96,7 @@ class PostController extends Controller
     {
         $post=Post::find($id);
         $post->title=$request->title;
+        $post->sub_title=$request->sub_title;
         $post->description=$request->description;
         $post->slug=Str::slug($request->title);
         if($request->hasFile('image'))
