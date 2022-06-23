@@ -41,7 +41,14 @@
                                     @foreach ($politics as $index=> $post)
                                         @if ($index == 0)
                                         <div class="col-md-12">
-                                            <h5>{{ $post->title }}</h5>
+                                           <div class="card">
+                                                <div class="card-body">
+                                                    <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
+                                                    <h5>{{ $post->title }}</h5>
+                                                    <div>{{ $post->created_at->diffForHumans() }}</div>
+                                                    {!! Str::limit($post->description,150," ...") !!}
+                                                </div>
+                                           </div>
                                         </div>
                                         @endif
 
@@ -53,8 +60,15 @@
                                 <div class="row">
                                     @foreach ($politics as $index=> $post)
                                         @if($index>0)
-                                            <div class="col-md-12">
-                                                <h5>{{ $post->title }}</h5>
+                                            <div class="col-md-12 py-2">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
+                                                       </div>
+                                                       <div class="col-md-8">
+                                                             <h5>{{ $post->title }}</h5>
+                                                       </div>
+                                                </div>
                                             </div>
                                         @endif
                                     @endforeach
