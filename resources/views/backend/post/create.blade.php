@@ -40,7 +40,7 @@
                             <textarea name="description" id="description" rows="3"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-info">Add Category</button>
+                        <button type="submit" class="btn btn-info">Save Post</button>
                     </form>
                 </div>
             </div>

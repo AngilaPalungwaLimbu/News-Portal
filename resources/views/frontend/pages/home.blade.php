@@ -7,10 +7,10 @@
                 <div class="row gy-4">
                     @foreach ($posts as $post)
                         <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h1 class="display-5 fw-semibold"><a href="">{{ $post->title }}</a></h1>
-                                    <img src="{{ asset($post->image) }}" width="100%" alt="">
+                            <div class="card bg-light p-4">
+                                <div class="card-body text-center">
+                                    <h1 class="display-5 fw-semibold my-2 "><a href="">{{ $post->title }}</a></h1>
+                                    <img src="{{ asset($post->image) }}" class="my-3" width="100%" alt="">
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <!-- Left Section -->
                             <div class="col-md-6">
                                 <div class="row">
-                                    @foreach ($politics as $index=> $post)
+                                    {{-- @foreach ($politics as $index=> $post)
                                         @if ($index == 0)
                                         <div class="col-md-12">
                                            <div class="card">
@@ -52,11 +52,11 @@
                                         </div>
                                         @endif
 
-                                    @endforeach
+                                    @endforeach --}}
                                 </div>
                             </div>
                             <!-- Right Section -->
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="row">
                                     @foreach ($politics as $index=> $post)
                                         @if($index>0)
@@ -73,7 +73,7 @@
                                         @endif
                                     @endforeach
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

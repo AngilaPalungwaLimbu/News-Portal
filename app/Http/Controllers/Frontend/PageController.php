@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Company;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,8 @@ class PageController extends Controller
     //Home Page
     public function home()
     {
+        //Company
+        $company=Company::first();
         //Menus List
         $menus = Category::where('status',true)->get();
 
@@ -19,11 +22,9 @@ class PageController extends Controller
         $posts = Post::orderBy('id','desc')->limit(3)->get();
 
         //Policits
-        $category = Category::where('slug','politics')->first();
-        $politics = $category->posts;
-
-
-        return view('frontend.pages.home',compact('menus','posts','politics'));
+        // $category = Category::where('slug','politics')->first();
+        // $politics = $category->posts;
+        return view('frontend.pages.home',compact('menus','posts','company'));
     }
 
     //Category Page
