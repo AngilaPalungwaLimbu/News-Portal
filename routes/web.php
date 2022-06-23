@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.app');
-});
+// Route::get('/', function () {
+//     return view('frontend.app');
+// });
+
+Route::get('/',[PageController::class,'home']);
 
 Auth::routes();
 
