@@ -21,10 +21,10 @@ class PageController extends Controller
         //Latest Top 3 Post
         $posts = Post::orderBy('id','desc')->limit(3)->get();
 
-        //Policits
-        // $category = Category::where('slug','politics')->first();
-        // $politics = $category->posts;
-        return view('frontend.pages.home',compact('menus','posts','company'));
+        // Policits
+        $category = Category::where('slug','politics')->first();
+        $politics = $category->posts;
+        return view('frontend.pages.home',compact('menus','posts','company','politics'));
     }
 
     //Category Page

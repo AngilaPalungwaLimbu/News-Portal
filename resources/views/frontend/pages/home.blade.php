@@ -9,7 +9,10 @@
                         <div class="col-md-12">
                             <div class="card bg-light p-4">
                                 <div class="card-body text-center">
-                                    <h1 class="display-5 fw-semibold my-2 "><a href="">{{ $post->title }}</a></h1>
+                                    <h1 class="display-5 fw-semibold py-3 "><a href="">{{ $post->title }}</a></h1>
+                                    @if (!empty($post->sub_title))
+                                    <h2 class="fw-semibold my-3 scolor ">{{ $post->sub_title }}</h2>
+                                    @endif
                                     <img src="{{ asset($post->image) }}" class="my-3" width="100%" alt="">
                                 </div>
                             </div>
@@ -29,34 +32,34 @@
 
                         <div class="row">
                              <!-- Heading -->
-                            <div class="col-md-12">
-                                <div class="d-flex justify-content-between py-2 px-3 bg-dark">
-                                    <span><h5 class="text-white">राजनीति</h5></span>
-                                    <span><a href="" class="text-white">More</a></span>
+                            <div class="col-md-12 ">
+                                <div class="d-flex justify-content-between py-2 px-3 bgdark mb-2 ">
+                                    <span><h5 class="fw-bold">राजनीति</h5></span>
+                                    <span><a href="" class="scolor fw-bold">More +</a></span>
                                 </div>
                             </div>
                             <!-- Left Section -->
                             <div class="col-md-6">
                                 <div class="row">
-                                    {{-- @foreach ($politics as $index=> $post)
+                                    @foreach ($politics as $index=> $post)
                                         @if ($index == 0)
                                         <div class="col-md-12">
-                                           <div class="card">
-                                                <div class="card-body">
-                                                    <img src="{{ asset($post->image) }}" class="img-fluid" alt="">
-                                                    <h5>{{ $post->title }}</h5>
+                                           <div class="card border-0">
+                                                <div class="card-body px-0 text-center fs-5">
+                                                    <img src="{{ asset($post->image) }}" class="img-fluid mb-3" alt="">
+                                                    <h5 class="fs-5 text-dark">{{ $post->title }}</h5>
                                                     <div>{{ $post->created_at->diffForHumans() }}</div>
-                                                    {!! Str::limit($post->description,150," ...") !!}
+                                                   <span class="text-secondary"> {!! Str::limit($post->description,150," ...") !!}</span>
                                                 </div>
                                            </div>
                                         </div>
                                         @endif
 
-                                    @endforeach --}}
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- Right Section -->
-                            {{-- <div class="col-md-6">
+                            <div class="col-md-6">
                                 <div class="row">
                                     @foreach ($politics as $index=> $post)
                                         @if($index>0)
@@ -73,7 +76,7 @@
                                         @endif
                                     @endforeach
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
 

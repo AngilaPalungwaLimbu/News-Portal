@@ -3,7 +3,7 @@ a{
     text-decoration: none;
 }
 
-.bg-dark{
+.bgdark{
     background-color: #f2f2f2;
 }
 
@@ -11,5 +11,9 @@ a{
     background-color: #007ba5;
 }
 .scolor{
-    color: #fa8331;
+    color: #fa8331 !important;
+}
+.navbar .navbar-nav .nav-link:hover{
+    background-color: #fa8331;
+    color: #fff;
 }
