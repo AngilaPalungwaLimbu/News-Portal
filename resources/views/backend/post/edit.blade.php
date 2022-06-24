@@ -52,7 +52,7 @@
                             <textarea name="description" id="description" rows="3" >{{$post->description}}</textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-info">Add Category</button>
+                        <button type="submit" class="btn btn-info">Update </button>
                     </form>
                 </div>
             </div>

@@ -34,8 +34,15 @@ class PageController extends Controller
     }
 
     //Single Page
-    public function single()
+    public function single($slug)
     {
-        # code...
+
+        //Company
+        $company=Company::first();
+        //Menus List
+        $menus = Category::where('status',true)->get();
+
+        $post=Post::where('slug',$slug)->first();
+        return view('frontend.pages.single',compact('post','company','menus'));
     }
 }
