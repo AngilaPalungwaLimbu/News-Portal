@@ -19,12 +19,14 @@ class PageController extends Controller
         $menus = Category::where('status',true)->get();
 
         //Latest Top 3 Post
+        $latest = Post::orderBy('id','desc')->get();
+        //Latest Top 3 Post
         $posts = Post::orderBy('id','desc')->limit(3)->get();
 
         // Policits
         $category = Category::where('slug','politics')->first();
         $politics = $category->posts;
-        return view('frontend.pages.home',compact('menus','posts','company','politics'));
+        return view('frontend.pages.home',compact('menus','posts','company','politics','latest'));
     }
 
     //Category Page

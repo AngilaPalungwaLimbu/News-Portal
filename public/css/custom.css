@@ -10,6 +10,9 @@ a{
 .pcolor{
     background-color: #007ba5;
 }
+.lightblue{
+    background-color: #beecfc !important;
+}
 .scolor{
     color: #fa8331 !important;
 }
