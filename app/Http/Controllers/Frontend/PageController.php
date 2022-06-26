@@ -37,10 +37,10 @@ class PageController extends Controller
          //Menus List
          $menus = Category::where('status',true)->get();
 
-
-
-        // $category=Category::find($id);
-         return view('frontend.pages.category',compact('menus','company','category'));
+         //Category
+         $category = Category::where('slug',$slug)->first();
+         $posts = $category->posts;
+         return view('frontend.pages.category',compact('menus','company','posts'));
     }
 
     //Single Page
