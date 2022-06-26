@@ -38,7 +38,9 @@ class PageController extends Controller
          $menus = Category::where('status',true)->get();
 
 
-         return view('frontend.pages.home',compact('menus','company',));
+
+        // $category=Category::find($id);
+         return view('frontend.pages.category',compact('menus','company','category'));
     }
 
     //Single Page

@@ -12,7 +12,8 @@
                         <h3 class="fw-semibold text-secondary">{{ $post->sub_title }}</h3>
                     @endif
                     <img src="{{ asset($post->image) }}" class="my-3" width="100%" alt="">
-                    <span class="fs-5"> {!! $post->description!!}</span>
+                    <div class="fs-5"> {!! $post->description!!}</div>
+                    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
                 </div>
             </div>
         </div>

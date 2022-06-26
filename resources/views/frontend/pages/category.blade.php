@@ -27,7 +27,7 @@
     <!-- ===== LATEST TOP 3 NEWS END ===== -->
 
     <!-- ===== RAJNITI ===== -->
-    <div>
+    {{-- <div>
         <div class="container">
             <div class="row">
                 <!-- RAJNITI SECTION -->
@@ -115,5 +115,5 @@
             </div>
         </div>
     </div>
-    <!-- ===== RAJNITI END ===== -->
+    <!-- ===== RAJNITI END ===== --> --}}
 @endsection

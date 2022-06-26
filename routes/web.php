@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/',[PageController::class,'home']);
 Route::get('news/{id}',[PageController::class,'single']);
-Route::get('menu/{id}',[PageController::class,'category']);
+Route::get('category/{slug}',[PageController::class,'category']);
 
 Auth::routes();
 
