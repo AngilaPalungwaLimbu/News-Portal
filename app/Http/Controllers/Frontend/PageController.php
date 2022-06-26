@@ -30,13 +30,19 @@ class PageController extends Controller
     }
 
     //Category Page
-    public function category()
+    public function category($slug)
     {
-        # code...
+         //Company
+         $company=Company::first();
+         //Menus List
+         $menus = Category::where('status',true)->get();
+
+
+         return view('frontend.pages.home',compact('menus','company',));
     }
 
     //Single Page
-    public function single($slug)
+    public function single($id)
     {
 
         //Company
@@ -44,7 +50,7 @@ class PageController extends Controller
         //Menus List
         $menus = Category::where('status',true)->get();
 
-        $post=Post::where('slug',$slug)->first();
+        $post=Post::find($id);
         return view('frontend.pages.single',compact('post','company','menus'));
     }
 }

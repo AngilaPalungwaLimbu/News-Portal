@@ -9,7 +9,7 @@
                 @foreach ($menus as $menu)
                     <li class="nav-item">
                         <a class="nav-link active fs-5 pe-5 py-3 text-white" aria-current="page"
-                            href="{{ $menu->id }}">{{ $menu->category_name }}</a>
+                            href="/menu/{{ $menu->id }}">{{ $menu->category_name }}</a>
                     </li>
                 @endforeach
 
