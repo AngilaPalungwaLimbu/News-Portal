@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-info">Add Record</button>
+                        <button type="submit" class="btn btn-info">Update Record</button>
                     </form>
                 </div>
             </div>

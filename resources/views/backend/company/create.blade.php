@@ -42,7 +42,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="registration_no">registration_no </label>
+                                    <label for="registration_no">Registration no. </label>
                                     <input type="text" name="registration_no" id="registration_no" class="form-control"
                                         placeholder="Enter your registration_no">
                                 </div>

@@ -45,6 +45,10 @@ class CompanyController extends Controller
         $company->address=$request->address;
         $company->email=$request->email;
         $company->contact=$request->contact;
+        $company->registration_no=$request->registration_no;
+        $company->pan_no=$request->pan_no;
+        $company->information_registration_no=$request->information_registration_no;
+        $company->contact_no_for_ads=$request->contact_no_for_ads;
         if($request->hasFile('logo'))
         {
             $file=$request->logo;
@@ -95,6 +99,10 @@ class CompanyController extends Controller
         $company->address=$request->address;
         $company->email=$request->email;
         $company->contact=$request->contact;
+        $company->registration_no=$request->registration_no;
+        $company->pan_no=$request->pan_no;
+        $company->information_registration_no=$request->information_registration_no;
+        $company->contact_no_for_ads=$request->contact_no_for_ads;
         if($request->hasFile('logo'))
         {
             $file=$request->logo;

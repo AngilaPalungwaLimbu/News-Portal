@@ -7,8 +7,12 @@ a{
     background-color: #f2f2f2;
 }
 
+
 .pcolor{
     background-color: #007ba5;
+}
+.pcolortext{
+    color: #007ba5;
 }
 .lightblue{
     background-color: #beecfc !important;
