@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('sub_title')->nullable();
             $table->string('slug');
+            $table->integer('views')->default('0');
             $table->longText('description');
             $table->string('image');
             $table->timestamps();
