@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Post;
+use App\Models\Ad;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -26,7 +27,10 @@ class PageController extends Controller
         // Policits
         $category = Category::where('slug','politics')->first();
         $politics = $category->posts;
-        return view('frontend.pages.home',compact('menus','posts','company','politics','latest'));
+
+        // Ads
+        $top_ads = Ad::where('ads_category','top_ads')->first();
+        return view('frontend.pages.home',compact('menus','posts','company','politics','latest','top_ads'));
     }
 
     //Category Page
