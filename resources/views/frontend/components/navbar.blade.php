@@ -24,3 +24,10 @@
         </div>
     </div>
 </nav>
+
+  <!-- ===== HEADER AD ===== -->
+  <div class="container py-5">
+    <a href="{{ $header_ads->link }}" target="_blank">
+        <img src="{{ asset($header_ads->image)  }}" width="100%" alt="">
+    </a>
+  </div>

@@ -20,7 +20,7 @@ class PageController extends Controller
         $menus = Category::where('status',true)->get();
 
         //Latest Top 3 Post
-        $latest = Post::orderBy('id','desc')->get();
+        $latest = Post::orderBy('id','desc')->limit(4)->get();
         //Latest Top 3 Post
         $posts = Post::orderBy('id','desc')->limit(3)->get();
 
@@ -30,7 +30,9 @@ class PageController extends Controller
 
         // Ads
         $top_ads = Ad::where('ads_category','top_ads')->first();
-        return view('frontend.pages.home',compact('menus','posts','company','politics','latest','top_ads'));
+
+        $header_ads = Ad::where('ads_category','header_ads')->first();
+        return view('frontend.pages.home',compact('menus','posts','company','politics','latest','top_ads','header_ads'));
     }
 
     //Category Page
@@ -44,7 +46,11 @@ class PageController extends Controller
          //Category
          $category = Category::where('slug',$slug)->first();
          $posts = $category->posts;
-         return view('frontend.pages.category',compact('menus','company','posts'));
+          // Ads
+        $top_ads = Ad::where('ads_category','top_ads')->first();
+
+        $header_ads = Ad::where('ads_category','header_ads')->first();
+         return view('frontend.pages.category',compact('menus','company','posts', 'top_ads','header_ads'));
     }
 
     //Single Page
@@ -57,6 +63,10 @@ class PageController extends Controller
         $menus = Category::where('status',true)->get();
 
         $post=Post::find($id);
-        return view('frontend.pages.single',compact('post','company','menus'));
+         // Ads
+         $top_ads = Ad::where('ads_category','top_ads')->first();
+
+         $header_ads = Ad::where('ads_category','header_ads')->first();
+        return view('frontend.pages.single',compact('post','company','menus','top_ads','header_ads'));
     }
 }
