@@ -18,9 +18,12 @@
                                 placeholder="Enter Company Name">
                         </div>
                         <div class="form-group">
-                            <label for="ads_category">Ads Type</label>
-                            <input type="text" name="ads_category" id="ads_category" class="form-control"
-                                placeholder="Enter Ads Type">
+                            <label for="ads_category">Select Ads Type</label>
+                            <select id="ads_category" class="form-control" name="ads_category">
+                                <option value="header_ads">Header Ads (1900 x 300)</option>
+                                <option value="topbar_ads">Topbar Ads (1400 X 150)</option>
+                                <option value="sidebar_ads">Sidebar Ads (500 x 500)</option>
+                            </select>
                         </div>
                         {{-- <select name="category_id[]" id="category_id" class="form-select form-control select2"  multiple>
                                 <option value="" disabled selected>Select your option</option>

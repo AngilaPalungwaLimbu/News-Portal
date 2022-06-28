@@ -3,21 +3,19 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FrontEnd\BaseController;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Post;
 use App\Models\Ad;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class PageController extends BaseController
 {
     //Home Page
     public function home()
     {
-        //Company
-        $company = Company::first();
-        //Menus List
-        $menus = Category::where('status', true)->get();
+
 
         //Latest Top 3 Post
         $latest = Post::orderBy('id', 'desc')->limit(4)->get();
@@ -28,49 +26,24 @@ class PageController extends Controller
         $category = Category::where('slug', 'politics')->first();
         $politics = $category->posts;
 
-        // Ads
-        $top_ads = Ad::where('ads_category', 'top_ads')->first();
-
-        $header_ads = Ad::where('ads_category', 'header_ads')->first();
-        return view('frontend.pages.home', compact('menus', 'posts', 'company', 'politics', 'latest', 'top_ads', 'header_ads'));
+        return view('frontend.pages.home', compact( 'posts', 'politics', 'latest'));
     }
 
     //Category Page
     public function category($slug)
     {
-        //Company
-        $company = Company::first();
-        //Menus List
-        $menus = Category::where('status', true)->get();
-
         //Category
         $category = Category::where('slug', $slug)->first();
         $posts = $category->posts;
-        // Ads
-        $top_ads = Ad::where('ads_category', 'top_ads')->first();
-
-        $header_ads = Ad::where('ads_category', 'header_ads')->first();
-        return view('frontend.pages.category', compact('menus', 'company', 'posts', 'top_ads', 'header_ads'));
+        return view('frontend.pages.category', compact( 'posts'));
     }
 
     //Single Page
     public function single($id)
     {
-
-        //Company
-        $company = Company::first();
-        //Menus List
-        $menus = Category::where('status', true)->get();
-
         $post = Post::find($id);
-
         //Latest Top 3 Post
         $latest = Post::orderBy('id', 'desc')->limit(4)->get();
-        // Ads
-        $top_ads = Ad::where('ads_category', 'top_ads')->first();
-
-        $header_ads = Ad::where('ads_category', 'header_ads')->first();
-        $sidebar_ads = Ad::where('ads_category', 'sidebar_ads')->first();
-        return view('frontend.pages.single', compact('post', 'company', 'menus', 'latest','top_ads', 'header_ads', 'sidebar_ads'));
+        return view('frontend.pages.single', compact('post', 'latest'));
     }
 }

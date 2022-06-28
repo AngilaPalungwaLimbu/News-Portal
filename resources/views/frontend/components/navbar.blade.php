@@ -27,7 +27,9 @@
 
   <!-- ===== HEADER AD ===== -->
   <div class="container py-5">
+    @if (!empty($header_ads))
     <a href="{{ $header_ads->link }}" target="_blank">
         <img src="{{ asset($header_ads->image)  }}" width="100%" alt="">
     </a>
+    @endif
   </div>

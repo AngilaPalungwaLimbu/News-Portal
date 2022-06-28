@@ -19,9 +19,12 @@
                                 placeholder="Enter Company Name" value="{{ $ad->company }}">
                         </div>
                         <div class="form-group">
-                            <label for="ads_category">Ads Type</label>
-                            <input type="text" name="ads_category" id="ads_category" class="form-control"
-                                placeholder="Enter Ads Type" value="{{ $ad->ads_category}}">
+                            <label for="ads_category">Slect Ads Type</label>
+                            <select id="ads_category" class="form-control" name="ads_category">
+                                <option value="header_ads">Header Ads</option>
+                                <option value="topbar_ads">Topbar Ads</option>
+                                <option value="sidebar_ads">Sidebar Ads</option>
+                            </select>
                         </div>
                         {{-- <select name="category_id[]" id="category_id" class="form-select form-control select2"  multiple>
                                 <option value="" disabled selected>Select your option</option>

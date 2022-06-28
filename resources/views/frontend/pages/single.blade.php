@@ -19,9 +19,11 @@
 
                 <div class="col-md-4 px-3 ">
                     <div class="col-md-12">
+                        @if (!empty($sidebar_ads))
                         <a href="{{ $sidebar_ads->link }}" target="_blank">
                             <img src="{{ asset($sidebar_ads->image) }}" width="100%" alt="">
                         </a>
+                        @endif
                     </div>
 
                     <!-- Header Section -->
