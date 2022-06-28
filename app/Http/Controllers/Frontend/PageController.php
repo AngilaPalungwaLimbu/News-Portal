@@ -46,6 +46,7 @@ class PageController extends BaseController
     public function single($id)
     {
         $post = Post::find($id);
+        $post->increment('views');
         //Latest Top 3 Post
         $latest = Post::orderBy('id', 'desc')->limit(4)->get();
         return view('frontend.pages.single', compact('post', 'latest'));
