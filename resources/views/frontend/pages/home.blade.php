@@ -7,9 +7,9 @@
     <!-- ===== LATEST TOP 3 NEWS END ===== -->
 
     <!-- ===== RAJNITI ===== -->
-    <div>
+    <div class="my-3">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <!-- RAJNITI SECTION -->
                 @include('frontend.components.home.rajnitinews')
 
@@ -20,4 +20,17 @@
         </div>
     </div>
     <!-- ===== RAJNITI END ===== -->
+
+
+    <!-- ===== SPORTS ===== -->
+    <div class="my-3">
+        <div class="container">
+            <div class="row">
+                <!-- RAJNITI SECTION -->
+                @include('frontend.components.home.sports')
+
+            </div>
+        </div>
+    </div>
+    <!-- ===== SPORTS END ===== -->
 @endsection

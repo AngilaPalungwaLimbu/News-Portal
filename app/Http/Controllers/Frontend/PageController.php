@@ -26,7 +26,11 @@ class PageController extends BaseController
         $category = Category::where('slug', 'politics')->first();
         $politics = $category->posts;
 
-        return view('frontend.pages.home', compact( 'posts', 'politics', 'latest'));
+        // Policits
+        $category = Category::where('slug', 'sports')->first();
+        $sports = $category->posts;
+
+        return view('frontend.pages.home', compact( 'posts', 'politics', 'latest','sports'));
     }
 
     //Category Page

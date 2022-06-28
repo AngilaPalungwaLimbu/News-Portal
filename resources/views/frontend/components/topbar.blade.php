@@ -6,11 +6,5 @@
                 width="334" height="22" font_color=fff></iframe>
         </div>
 
-        <div class="icons text-white">
-            <i class="fa-brands fa-facebook-square m-2"></i>
-            <i class="fa-brands fa-instagram m-2"></i>
-            <i class="fa-brands fa-linkedin m-2"></i>
-            <i class="fa-brands fa-twitter-square m-2"></i>
-        </div>
     </div>
 </div>
