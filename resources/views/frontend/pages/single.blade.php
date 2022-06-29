@@ -13,7 +13,7 @@
                     @endif
                     <hr>
                     <ul class="list-unstyled ">
-                        <li class="list-inline-item">
+                        <li class="list-inline-item me-3">
                             <i class=" far fa-clock me-1"></i><span>{{ $post->created_at }}</span>
                         </li>
                         <li class="list-inline-item">

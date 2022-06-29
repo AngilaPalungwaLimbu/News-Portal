@@ -57,6 +57,7 @@ class CompanyController extends Controller
             $company->logo="images/$newname";
         }
         $company->save();
+        toast('Your category is saved!','success');
         return redirect('/company');
     }
 
@@ -111,6 +112,7 @@ class CompanyController extends Controller
             $company->logo="images/$newname";
         }
         $company->update();
+        toast('Your category is updated!','success');
         return redirect('/company');
     }
 
@@ -124,6 +126,7 @@ class CompanyController extends Controller
     {
         $company=Company::find($id);
         $company->delete();
+        toast('Your category is deleted!','success');
         return redirect('/company');
     }
 }

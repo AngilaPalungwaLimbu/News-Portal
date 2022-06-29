@@ -53,6 +53,7 @@ class AdController extends Controller
             $ad->image="images/$newname";
         }
         $ad->save();
+        toast('Your category is saved!','success');
         return redirect('/ad');
     }
 
@@ -101,6 +102,7 @@ class AdController extends Controller
             $ad->image="images/$newname";
         }
         $ad->update();
+        toast('Your category is updated!','success');
         return redirect('/ad');
     }
 
@@ -114,6 +116,7 @@ class AdController extends Controller
     {
         $ad=Ad::find($id);
         $ad->delete();
+        toast('Your category is deleted!','success');
         return redirect('/ad');
     }
 }

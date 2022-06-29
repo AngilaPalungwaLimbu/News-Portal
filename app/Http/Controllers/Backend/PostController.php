@@ -54,7 +54,7 @@ class PostController extends Controller
             $post->image="images/$newname";
         }
         $post->save();
-
+        toast('Your category is saved!','success');
         $post->categories()->attach($request->category_id);
         return redirect('/post');
     }
@@ -108,6 +108,7 @@ class PostController extends Controller
         }
         $post->update();
         $post->categories()->sync($request->category_id);
+        toast('Your category is updated!','success');
         return redirect('/post');
     }
 
@@ -122,6 +123,7 @@ class PostController extends Controller
         $post=Post::find($id);
         $post->categories()->detach();
         $post->delete();
+        toast('Your category is deleted!','success');
         return redirect('/post');
     }
 }

@@ -53,6 +53,7 @@ class CategoryController extends Controller
             $category->status=0;
         }
         $category->save();
+        toast('Your category is added!','success');
         return redirect('/category');
     }
 
@@ -99,6 +100,7 @@ class CategoryController extends Controller
 
         }
         $category->update ();
+        toast('Your category is updated!','success');
         return redirect('/category');
     }
 
@@ -112,6 +114,8 @@ class CategoryController extends Controller
     {
         $category=Category::find($id);
         $category->delete();
+        toast('Your category is deleted!','success');
+
         return redirect('/category');
     }
 }
