@@ -10,11 +10,13 @@
             <div class="row" >
                 @foreach ($latest as $post)
                     <div class="col-md-12 ">
+                       <a href="/news/{{$post->id }}">
                         <div class="d-flex">
                             <img src="{{ asset($post->image) }}" class="img-fluid pe-3" width="30%"
                                 height="auto" alt="">
                             <h5>{{ $post->title }}</h5>
                         </div>
+                       </a>
 
                         <hr>
                     </div>
