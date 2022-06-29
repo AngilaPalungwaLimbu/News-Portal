@@ -14,7 +14,17 @@
                     <hr>
                     <ul class="list-unstyled ">
                         <li class="list-inline-item me-3">
-                            <i class=" far fa-clock me-1"></i><span>{{ $post->created_at }}</span>
+                            <i class=" far fa-clock me-1"></i><span>
+
+                                @php
+                                    $year = $post->created_at->format('Y');
+                                    $month = $post->created_at->format('m');
+                                    $day = $post->created_at->format('d');
+                                    $date = Bsdate::eng_to_nep($year, $month, $day);
+                                    echo $date['date'] . ' ' . $date['nmonth'] . ' ' . $date['year'] . ',' . $date['day'];
+                                @endphp
+
+                            </span>
                         </li>
                         <li class="list-inline-item">
                             <i class="far fa-newspaper me-1"></i><span>{{ $post->views }}</span>
