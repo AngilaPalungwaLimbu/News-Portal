@@ -284,8 +284,18 @@
                                         class="mdi mdi-settings me-1 ms-1"></i> Account
                                     Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                    {{-- Logout --}}
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                   <i class="fa fa-power-off me-1 ms-1"></i> Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+
                                 <div class="dropdown-divider"></div>
                                 <div class="ps-4 p-10">
                                     <a href="javascript:void(0)"
@@ -406,7 +416,7 @@
         $(document).ready(function() {
             $('.select2').select2({
                 theme: 'classic',
-                placeholder : "कृपया श्रेणी चयन गर्नुहोस्"
+                placeholder: "कृपया श्रेणी चयन गर्नुहोस्"
             });
             $(".").select2({
                 width: 'resolve' // need to override the changed default
