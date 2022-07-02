@@ -43,7 +43,11 @@
                         <p >Phone: {{ $company->contact }}</p>
                         <p >For Advertisement</p>
                         <p >Phone: {{ $company->contact_no_for_ads }}</p>
-
+                        <form method="post" action="/subscribe">
+                            @csrf
+                            <input type="email" name="email" placeholder="Enter your Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </div>

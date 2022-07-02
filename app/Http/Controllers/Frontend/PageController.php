@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Company;
 use App\Models\Post;
 use App\Models\Ad;
+use App\Models\Subscribe;
 use Illuminate\Http\Request;
 
 class PageController extends BaseController
@@ -50,5 +51,11 @@ class PageController extends BaseController
         //Latest Top 3 Post
         $latest = Post::orderBy('id', 'desc')->limit(4)->get();
         return view('frontend.pages.single', compact('post', 'latest'));
+    }
+    public function subscribe(Request $request){
+        $subscribe=new Subscribe();
+        $subscribe->email=$request->email;
+        $subscribe->save();
+        return redirect()->back();
     }
 }

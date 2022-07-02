@@ -29,6 +29,11 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/ad"
                         aria-expanded="false"><i class=" fas fa-images"></i><span class="hide-menu">Ads</span></a>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/subscribe"
+                        aria-expanded="false"><i class=" fas fa-images"></i><span class="hide-menu">Subscribe</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

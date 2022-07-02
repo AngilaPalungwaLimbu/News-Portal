@@ -20,18 +20,23 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Route::get('/', function () {
-//     return view('frontend.app');
+//     return view('welcome');
 // });
 
-Route::get('/',[PageController::class,'home']);
-Route::get('/news/{id}',[PageController::class,'single']);
-Route::get('/kapurinews/{slug}',[PageController::class,'category']);
+Route::get('/', [PageController::class, 'home']);
+Route::get('/news/{id}', [PageController::class, 'single']);
+Route::get('/kapurinews/{slug}', [PageController::class, 'category']);
+Route::post('subscribe', [PageController::class, 'subscribe']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('company', CompanyController::class);
-Route::resource('category', CategoryController::class);
-Route::resource('post', PostController::class);
-Route::resource('ad', AdController::class);
+
+
+Route::middleware(['admin'])->group(function () {
+    Route::resource('company', CompanyController::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('post', PostController::class);
+    Route::resource('ad', AdController::class);
+});
