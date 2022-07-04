@@ -12,6 +12,7 @@
                 <img src="{{ asset($top_ads->image) }}"alt=""  width="100%">
             </a>
             @endif
+           
         </div>
     </div>
 

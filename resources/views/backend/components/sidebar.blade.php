@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/subscribe"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/subscriber"
                         aria-expanded="false"><i class=" fas fa-images"></i><span class="hide-menu">Subscribe</span></a>
                 </li>
             </ul>

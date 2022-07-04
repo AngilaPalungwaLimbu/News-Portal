@@ -58,4 +58,5 @@ class PageController extends BaseController
         $subscribe->save();
         return redirect()->back();
     }
+
 }

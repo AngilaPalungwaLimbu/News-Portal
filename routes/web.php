@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\AdController;
+use App\Http\Controllers\Backend\SubscriberController;
 use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,4 +40,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('post', PostController::class);
     Route::resource('ad', AdController::class);
+    Route::get('subscriber', [SubscriberController::class, 'subscriber']);
+    Route::get('event_notification', [SubscriberController::class, 'event']);
+
 });

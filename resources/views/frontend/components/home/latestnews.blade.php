@@ -1,6 +1,7 @@
 <div class="py-3">
     <div class="container">
         <div class="row gy-4">
+            @if (!empty($posts))
             @foreach ($posts as $post)
                 <div class="col-md-12">
                     <div class="card bg-light p-4">
@@ -17,6 +18,8 @@
                     </div>
                 </div>
             @endforeach
+
+            @endif
         </div>
     </div>
 </div>
